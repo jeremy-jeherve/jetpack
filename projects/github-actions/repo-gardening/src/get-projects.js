@@ -1,3 +1,5 @@
+const debug = require( './debug' );
+
 /* global GitHub */
 
 // Cache for getProjects.
@@ -18,8 +20,11 @@ async function getProjects( octokit, org ) {
 
 	for await ( const response of octokit.paginate.iterator( octokit.rest.projects.listForOrg, {
 		org,
+		state: 'open',
+		per_page: 100,
 	} ) ) {
 		for ( const project of response.data ) {
+			debug( `get-projects: Found project ${ project }.` );
 			projects.push( project );
 		}
 	}
