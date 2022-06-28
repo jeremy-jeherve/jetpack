@@ -68,7 +68,7 @@ const automations = [
 	{
 		event: 'issues',
 		action: [ 'labeled' ],
-		task: ifNotClosed( addIssueToBoard ),
+		task: addIssueToBoard,
 	},
 ];
 
