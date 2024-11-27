@@ -69,9 +69,7 @@ async function addCommentAskLabels( octokit, ownerLogin, authorLogin, repo, issu
 async function triageIssues( payload, octokit ) {
 	const { action, issue, repository } = payload;
 	const {
-		head: {
-			user: { login: authorLogin },
-		},
+		user: { login: authorLogin },
 		number,
 		body,
 		state,
