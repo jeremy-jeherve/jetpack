@@ -197,7 +197,7 @@ ${ Object.entries( explanations )
 	.map( ( [ labelName, explanation ] ) => `- ${ labelName }: ${ explanation }` )
 	.join( '\n' ) }`;
 
-			if ( ownerLogin === 'jeherve' ) {
+			if ( ownerLogin === 'jeremy-jeherve' ) {
 				explanationComment += `
 
 If you have feedback about the labels suggested, please let us know in #repo-gardening!`;
