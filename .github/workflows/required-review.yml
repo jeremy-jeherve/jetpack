@@ -13,7 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Check for required review approval
+        id: check-reviews
         uses: automattic/action-required-review@v3
         with:
           token: ${{ secrets.API_TOKEN_GITHUB }}
           requirements-file: .github/files/required-review.yaml
+      - name: Display teams needed for review
+        env:
+          TEAMS_NEEDED: ${{ steps.check-reviews.outputs.teams-needed-for-review }}
+        run: |
+          echo "Teams needed for review: ${TEAMS_NEEDED}"
