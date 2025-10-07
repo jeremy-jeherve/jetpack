@@ -1,6 +1,7 @@
 <?php
 /**
  * Action Hooks for Jetpack connection assets.
+ * and a change
  *
  * @package automattic/jetpack-connection
  */
