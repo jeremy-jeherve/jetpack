@@ -101,6 +101,7 @@ async function main() {
 				await requestReview( [ ...teamsNeededForReview ] );
 			}
 		}
+		core.setOutput( 'teams-needed-for-review', [ ...teamsNeededForReview ] );
 	} catch ( error ) {
 		let err, state, description;
 		if ( error instanceof reporter.ReportError ) {
